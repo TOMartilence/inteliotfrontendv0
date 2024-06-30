@@ -56,8 +56,9 @@ function Navbar() {
                 <NavLink className="nav-link mx-2" activeClassName="active" to="/projects">Projects</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link mx-2" activeClassName="active" to="/gallery">Gallery</NavLink>
+                <NavLink className="nav-link mx-2" activeClassName="active" to="/timeline">Timeline</NavLink>
               </li>
+              
 
               <li className="nav-item">
                 <NavLink className="nav-link mx-2" activeClassName="active" to="/resources">Resources</NavLink>
@@ -74,14 +75,14 @@ function Navbar() {
                 <NavLink className="nav-link mx-2" activeClassName="active" to="/101">Project 101</NavLink>
               </li>
              
-              
+              <li className="nav-item">
+                <NavLink className="nav-link mx-2" activeClassName="active" to="/gallery">Gallery</NavLink>
+              </li>
               
               <li className="nav-item">
                 <a className="nav-link mx-2" href="https://linktr.ee/inteliotclub">Socials</a>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link mx-2" activeClassName="active" to="/timeline">Timeline</NavLink>
-              </li>
+              
               <li className="nav-item">
                 <NavLink className="nav-link mx-2" activeClassName="active" to="/members">Members</NavLink>
               </li>
