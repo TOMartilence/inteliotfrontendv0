@@ -5,14 +5,15 @@ function VideoForm() {
     const [height,setHeight]=useState(0);
     const [width,setWidth] = useState(0);
     const [link,setLink] = useState("");
-    const handleSubmit = async()=>{
+    const handleSubmit = async(e)=>{
+      e.preventDefault();
         try {
             const response = await axios.post("https://inteliotbackendv0.onrender.com/api/addYtvideo",{link,height,width});
             alert(response.data.message)
         } catch (error) {
 
         }
-    }
+    } 
   return (
     <>
     <div style={ {  backgroundImage: "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
