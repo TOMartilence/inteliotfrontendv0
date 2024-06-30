@@ -45,7 +45,7 @@ function Home() {
         <div className="container">
           <div className="row">
             <div className="col-md-12 text-center">
-            <Typer sentence="Bring the world together through IoT"/> <br />
+            <Typer sentence="Technology is best when it brings people together. - Matt Mullenweg"/> <br />
               <h3 className="animate-charcter" > INTEL I o T CLUB </h3> <br />
               
             </div>
