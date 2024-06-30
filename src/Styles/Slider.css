@@ -1,0 +1,25 @@
+.image-slider {
+  width: 100%;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  white-space: nowrap; /* Keep images in a single line */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+}
+
+.image-train {
+  display: inline-flex; /* Display images in a single line */
+}
+
+.image-train img {
+  flex-shrink: 0;
+  width: 300px; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+  margin: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.2) saturate(1.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-train img:hover {
+  transform: scale(1.1);
+}

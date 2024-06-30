@@ -1,0 +1,22 @@
+
+
+@media screen and (min-width: 992px) {
+  .nav-item {
+    line-height: 80px;
+  }
+}
+
+.navbar {
+  background-color: #08127e99;
+  transition: background-color 0.3s ease; 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; 
+}
+
+.scrolled {
+  backdrop-filter: blur(18px); 
+  -webkit-backdrop-filter: blur(18px); 
+  background-color: rgba(6, 8, 125, 0.345);
+}
