@@ -76,7 +76,7 @@ function Resources() {
 
       <div
         className="resource-form-container"
-        style={{ display: display }}
+        style={{ display: display,zIndex:1000 }}
       >
         <form onSubmit={handleSubmit}>
           <input type="text" name="title" placeholder="Title" className="form-control mb-3" />
