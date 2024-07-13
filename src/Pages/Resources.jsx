@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import problemStatements from "../Images/EventPosters/Problemstatement/problems.pdf"
 function Resources() {
   const [display, setDisplay] = useState('none');
   const [resource, setResource] = useState([]);
@@ -15,13 +15,14 @@ function Resources() {
 
   const handleOpenFile = async (fileName) => {
     try {
-      console.log("Requesting file:", fileName);
-      const response = await axios.post('https://inteliotbackendv0.onrender.com/api/findpdf', { fileName }, { responseType: 'blob' });
+      // console.log("Requesting file:", fileName);
+      // const response = await axios.post('https://inteliotbackendv0.onrender.com/api/findpdf', { fileName }, { responseType: 'blob' });
 
-      const blob = new Blob([response.data], { type: 'application/pdf' });
-      const url = URL.createObjectURL(blob);
+      // const blob = new Blob([response.data], { type: 'application/pdf' });
+      // const url = URL.createObjectURL(blob);
 
-      window.open(url, '_blank');
+      // window.open(url, '_blank');
+      window.open(problemStatements)
     } catch (error) {
       console.error('Error opening file:', error);
     }
