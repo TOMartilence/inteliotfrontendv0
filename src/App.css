@@ -99,7 +99,7 @@ body {
 @media (max-width: 768px) and (min-width: 400px) {
   .firstPage {
     height: 100vh;
-    background-image: url("./Images/pg1bg.jpg");
+    background-image: url("./Images/pgtrial.jpg");
   }
 
   .animate-charcter {
