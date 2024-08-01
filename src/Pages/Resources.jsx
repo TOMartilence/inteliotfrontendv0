@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import problemStatements from "../Images/EventPosters/Problemstatement/problems.pdf"
+import brochure from "../Images/EventPosters/Problemstatement/broch.pdf"
 function Resources() {
   const [display, setDisplay] = useState('none');
   const [resource, setResource] = useState([]);
@@ -22,7 +23,12 @@ function Resources() {
       // const url = URL.createObjectURL(blob);
 
       // window.open(url, '_blank');
-      window.open(problemStatements)
+      if(fileName ==="ESP2LIFE HACKATHON Official Problem Statements"){
+        window.open(problemStatements)
+      }
+      else if (fileName === "Club Brochure"){
+        window.open(brochure)
+      }
     } catch (error) {
       console.error('Error opening file:', error);
     }
@@ -94,7 +100,7 @@ function Resources() {
               <div className="card-body">
                 <h5 className="card-title">{item.title}</h5>
                 <p className="card-text">{item.description}</p>
-                <button className="btn btn-primary" onClick={() => handleOpenFile(item.fileurl)}>Open PDF</button>
+                <button className="btn btn-primary" onClick={() => handleOpenFile(item.title)}>Open PDF</button>
               </div>
             </div>
           </div>
