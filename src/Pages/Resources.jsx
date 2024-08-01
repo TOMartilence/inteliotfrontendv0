@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import problemStatements from "../Images/EventPosters/Problemstatement/problems.pdf"
 import brochure from "../Images/EventPosters/Problemstatement/broch.pdf"
+import format from "../Images/EventPosters/Problemstatement/format.pdf"
+
 function Resources() {
   const [display, setDisplay] = useState('none');
   const [resource, setResource] = useState([]);
@@ -26,8 +28,8 @@ function Resources() {
       if(fileName ==="ESP2LIFE HACKATHON Official Problem Statements"){
         window.open(problemStatements)
       }
-      else if (fileName === "Club Brochure"){
-        window.open(brochure)
+      else if (fileName === "Hackathon Report Format"){
+        window.open(format)
       }
     } catch (error) {
       console.error('Error opening file:', error);
