@@ -72,7 +72,7 @@ function Events() {
               event.eventTitle.toLowerCase().includes(search.toLowerCase()) ||
               event.description.toLowerCase().includes(search.toLowerCase()) ||
               event.eventType.toLowerCase().includes(search.toLowerCase())
-          )
+          ).reverse()
           .map((event) => (
             <EventCards
               id={event.id}
