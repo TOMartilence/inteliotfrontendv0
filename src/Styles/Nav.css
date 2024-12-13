@@ -8,32 +8,133 @@
 
 .navbar {
   background-color: #08127e99;
-  transition: background-color 0.3s ease; 
+  transition: all 0.3s ease;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .scrolled {
-  backdrop-filter: blur(18px); 
-  -webkit-backdrop-filter: blur(18px); 
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   background-color: rgba(6, 8, 125, 0.345);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Dropdown styling */
 .dropdown-menu {
   background-color: rgba(6, 8, 125, 0.9);
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  margin-top: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transform: translateY(10px);
+  opacity: 0;
+  display: block;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Show dropdown on both hover and click */
+@media (min-width: 992px) {
+  .dropdown:hover .dropdown-menu,
+  .dropdown-menu.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Prevent dropdown from closing when hovering over it */
+  .dropdown-menu:hover {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .dropdown-item {
   color: white;
-  padding: 10px 15px;
+  padding: 12px 24px;
   text-decoration: none;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding-left: 30px;
+  color: white;
+}
+
+.dropdown-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: white;
+  transform: scaleY(0);
+  transition: transform 0.2s ease;
+}
+
+.dropdown-item:hover::before {
+  transform: scaleY(1);
+}
+
+/* Dropdown toggle animation */
+.dropdown-toggle::after {
+  transition: transform 0.2s ease;
+}
+
+.dropdown:hover .dropdown-toggle::after,
+.dropdown.show .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+/* Active state styling */
+.dropdown-item.active,
+.dropdown-item:active {
   background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 991px) {
+  .dropdown-menu {
+    background-color: rgba(6, 8, 125, 0.4);
+    transform: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+  }
+  
+  .dropdown-menu.show {
+    display: block;
+  }
+  
+  .dropdown-item {
+    padding: 10px 20px;
+  }
+  
+  .dropdown-item:hover {
+    padding-left: 25px;
+  }
+}
+
+/* Fix for Safari and other browsers */
+@media (min-width: 992px) {
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown > .dropdown-menu {
+    position: absolute;
+  }
 }
