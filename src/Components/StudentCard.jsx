@@ -8,7 +8,7 @@ function StudentCard({ student }) {
       <p><strong>Year:</strong> {student.year}</p>
       <p><strong>Department:</strong> {student.dept}</p>
       <p><strong>Team:</strong> {student.team}</p>
-      <p><strong>Phone:</strong> {student.phone}</p>
+      <p><strong>Phone:</strong> {student.phoneNumber}</p>
     </div>
   );
 }
