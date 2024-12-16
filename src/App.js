@@ -13,6 +13,7 @@ import About from './Pages/About';
 import AdminConsole from './Pages/AdminConsole'; 
 import VideoForm from './Components/VideoForm';
 import TimelinePage from './Pages/TimelinePage';
+import StudentRegister from "./Pages/StudentRegister"; 
 import Resources from './Pages/Resources';
 function App() {
   console.log(process.env.REACT_APP_backendbaseurl);
@@ -34,6 +35,7 @@ function App() {
           <Route path='/admin' element={<Admin/>}/>
           <Route path='/faq' element={<Faq/>}/>
           <Route path='/adminconsole' element={<AdminConsole/>}/>
+          <Route path = '/register' element = {<StudentRegister/>}/>
         </Routes>
 
       </Router>

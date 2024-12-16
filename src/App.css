@@ -2430,3 +2430,21 @@ button{
     font-size: 0.9rem;
   }
 }
+/* Button styling */
+.glitter-button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  position: relative;
+  overflow: visible; /* Allow particles to move outside */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.glitter-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 255, 0.6);
+}
