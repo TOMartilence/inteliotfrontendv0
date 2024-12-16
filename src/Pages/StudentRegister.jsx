@@ -44,7 +44,7 @@ function StudentRegister() {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/studentRegister', formData);
+      const response = await axios.post(`${process.env["REACT_APP_backendbaseurl"]}/api/studentRegister`, formData);
       setMessage(response.data.message);
     } catch (error) {
       setMessage('Error: Unable to register. Please try again later.');
