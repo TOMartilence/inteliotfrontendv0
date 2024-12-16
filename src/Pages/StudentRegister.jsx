@@ -68,7 +68,7 @@ function StudentRegister() {
             borderRadius: '10px',
           }}
         >
-          <h2 style={{ marginTop: '100px' }}>Student Registration</h2>
+          <h2 style={{ marginTop: '100px' }}>IoRT Registration</h2>
           {message && <p style={{ color: 'green' }}>{message}</p>}
           <form onSubmit={handleSubmit}>
             <div style={{ marginBottom: '15px' }}>

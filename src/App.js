@@ -15,6 +15,7 @@ import VideoForm from './Components/VideoForm';
 import TimelinePage from './Pages/TimelinePage';
 import StudentRegister from "./Pages/StudentRegister"; 
 import Resources from './Pages/Resources';
+import IoRTpage from './Pages/IoRTpage';
 function App() {
   console.log(process.env.REACT_APP_backendbaseurl);
   return (
@@ -36,6 +37,8 @@ function App() {
           <Route path='/faq' element={<Faq/>}/>
           <Route path='/adminconsole' element={<AdminConsole/>}/>
           <Route path = '/register' element = {<StudentRegister/>}/>
+          <Route path = '/iort' element = {<IoRTpage/>}/>
+
         </Routes>
 
       </Router>
