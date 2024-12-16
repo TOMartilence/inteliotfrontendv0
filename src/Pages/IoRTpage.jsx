@@ -13,7 +13,7 @@ function IoRTpage() {
           throw new Error("Failed to fetch students data");
         }
         const data = await response.json();
-        setStudents(data);
+        setStudents(data.reverse());
       } catch (err) {
         console.error(err);
         setError(err.message);

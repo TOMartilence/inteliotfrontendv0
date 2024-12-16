@@ -8,7 +8,7 @@ function StudentRegister() {
     year: '',
     dept: '',
     team: '',
-    phone: '',
+    phoneNumber: '',
   });
 
   const [message, setMessage] = useState('');
