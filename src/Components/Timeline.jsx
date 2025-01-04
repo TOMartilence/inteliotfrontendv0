@@ -10,6 +10,7 @@ const Timeline = ({ events }) => {
           style={{ marginTop: "70px" }}
         >
           <div className="timeline-dot"></div>
+
           <div className="timeline-content">
             <h3>{event.title}</h3>
             <p>{event.description}</p>
