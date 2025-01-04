@@ -2120,10 +2120,12 @@ button{
 
 .left {
   left: 0;
+  
 }
 
 .right {
-  left: 50%;
+  left: 52%;
+  
 }
 
 .right::before {
@@ -2153,7 +2155,7 @@ button{
 }
 
 .right::after {
-  left: -16px;
+  right: 40px;
 }
 
 .timeline-content {
@@ -2170,7 +2172,7 @@ button{
 
 .timeline-content:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 20px #3498db;
+  box-shadow: 0 0  20px #3498db;
 }
 
 .timeline-content h3 {
@@ -2203,15 +2205,20 @@ button{
   transform: translateX(-50%);
   z-index: 2;
   box-shadow: 0 0 10px #3498db;
+  
 }
 
 .timeline-container.left .timeline-dot {
   left: auto;
   right: -10px;
+
 }
 
 .timeline-container.right .timeline-dot {
-  left: -10px;
+  left: -5px;
+  top: 4.5%; 
+  width: 20px;
+  height: 20px;
 }
 
 @media screen and (max-width: 768px) {
