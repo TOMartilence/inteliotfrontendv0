@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Faqform from "../Components/Faqform";
-import axios from "axios";
 import { Container } from "react-bootstrap";
 import { gsap } from "gsap";
 
@@ -46,32 +45,32 @@ function Faq() {
   ]);
   const accordionRefs = useRef([]);
 
-  const deletefaq = async (id) => {
-    try {
-      const response = await axios.post(
-        `https://inteliotbackendv0.onrender.com/api/deletefaq/${id}`
-      );
-      alert(response.data.message);
-      getFaqData();
-    } catch (error) {
-      alert("Request couldn't be sent");
-    }
-  };
+  // const deletefaq = async (id) => {
+  //   try {
+  //     const response = await axios.post(
+  //       `https://inteliotbackendv0.onrender.com/api/deletefaq/${id}`
+  //     );
+  //     alert(response.data.message);
+  //     getFaqData();
+  //   } catch (error) {
+  //     alert("Request couldn't be sent");
+  //   }
+  // };
 
-  useEffect(() => {
-    getFaqData();
-  }, []);
+  // useEffect(() => {
+  //   getFaqData();
+  // }, []);
 
-  const getFaqData = async () => {
-    try {
-      const response = await axios.get(
-        "https://inteliotbackendv0.onrender.com/api/getFaq"
-      );
-      setFaq(response.data.faq);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const getFaqData = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       "https://inteliotbackendv0.onrender.com/api/getFaq"
+  //     );
+  //     setFaq(response.data.faq);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const handleNewMember = () => {
     setCount((prevCount) => {
@@ -148,7 +147,7 @@ function Faq() {
                 {sessionStorage.getItem("token") && (
                   <i
                     className="fas fa-trash"
-                    onClick={() => deletefaq(data._id)}
+                    // onClick={() => deletefaq(data._id)}
                     style={{ cursor: "pointer", color: "red" }}
                   ></i>
                 )}
