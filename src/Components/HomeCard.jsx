@@ -24,7 +24,6 @@ function HomeCard(props) {
           textAlign: props.align,
           marginBottom: "50px",
           border: "1px solid blue",
-          overflow: "hidden",
         }}
       >
         {sessionStorage.getItem("token") ? (
