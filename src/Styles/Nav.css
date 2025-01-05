@@ -58,6 +58,7 @@
 
 .dropdown-item {
   color: white;
+  line-height: 40px;
   padding: 12px 24px;
   text-decoration: none;
   transition: all 0.2s ease;
