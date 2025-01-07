@@ -53,11 +53,6 @@ function Home() {
             <div>
   <Link to="/register"><button className="glitter-button">
     Join IoRT : Xperiance Robots!
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
   </button></Link>
 </div>
 
@@ -101,6 +96,7 @@ function Home() {
           )}
         </Container>
       </div>
+      
       <div className="thirdPage" style={{
         backgroundImage: "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
         minHeight: "200vh"

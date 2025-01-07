@@ -1,12 +1,26 @@
+
 .image-slider {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  overflow-x: auto; /* Allow horizontal scrolling */
-  white-space: nowrap; /* Keep images in a single line */
+  height: 100%;
   -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
 }
 
+@media (max-width: 768px) {
+  .image-slider {
+    overflow-x: scroll;
+  }
+}
+
 .image-train {
-  display: inline-flex; /* Display images in a single line */
+  display: flex;
+  transition: transform 0.5s ease;
+  white-space: nowrap;
+}
+
+.image-train.animate {
+  animation: slide 10s linear infinite;
 }
 
 .image-train img {
@@ -20,6 +34,24 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.image-train img:hover {
-  transform: scale(1.1);
+.image-train::-webkit-scrollbar {
+  display: none;
 }
+
+.image-train {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+

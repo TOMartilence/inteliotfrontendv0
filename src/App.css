@@ -112,11 +112,11 @@ body {
   }
 
   .secondPage {
-    height: 120vh;
+    min-height: 120vh;
   }
 
   .thirdPage {
-    height: 110vh;
+    min-height: 110vh;
   }
   .memberCard {
     background-color: black;
