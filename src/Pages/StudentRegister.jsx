@@ -57,6 +57,7 @@ function StudentRegister() {
         style={{
           backgroundImage: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)',
           minHeight: '100vh',
+          padding: '120px',
         }}
       >
         <div
@@ -68,7 +69,7 @@ function StudentRegister() {
             borderRadius: '10px',
           }}
         >
-          <h2 style={{ marginTop: '100px' }}>IoRT Registration</h2>
+          <h2 style={{ marginTop: '20px' }}>IoRT Registration</h2>
           {message && <p style={{ color: 'green' }}>{message}</p>}
           <form onSubmit={handleSubmit}>
             <div style={{ marginBottom: '15px' }}>
@@ -210,6 +211,7 @@ function StudentRegister() {
                 backgroundColor: 'blue',
                 color: 'white',
                 cursor: 'pointer',
+                marginBottom: '10px',
               }}
             >
               Register
