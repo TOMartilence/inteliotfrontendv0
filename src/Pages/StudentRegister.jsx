@@ -13,6 +13,7 @@ function StudentRegister() {
 
   const [message, setMessage] = useState('');
   const [phoneError, setPhoneError] = useState('');
+  const [isHovered, setIsHovered] = useState(false);
 
   // Handle form input changes
   const handleChange = (e) => {
@@ -208,11 +209,13 @@ function StudentRegister() {
                 padding: '10px 20px',
                 border: 'none',
                 borderRadius: '5px',
-                backgroundColor: 'blue',
+                backgroundColor: isHovered ? '#4d4df7' : 'blue',
                 color: 'white',
                 cursor: 'pointer',
                 marginBottom: '10px',
               }}
+              onMouseOver={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
               Register
             </button>
