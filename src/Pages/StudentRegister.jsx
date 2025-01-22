@@ -14,13 +14,14 @@ function StudentRegister() {
   const [message, setMessage] = useState('');
   const [phoneError, setPhoneError] = useState('');
   const [isHovered, setIsHovered] = useState(false);
+  const [rollError, setRollError] = useState('');
 
   // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     // Validate phone number field
-    if (name === 'phone') {
+    if (name === 'phoneNumber') {
       if (!/^\d{0,10}$/.test(value)) {
         return; // Prevent invalid input
       }
@@ -28,6 +29,11 @@ function StudentRegister() {
 
     setFormData({ ...formData, [name]: value });
 
+    // Reset roll number error if corrected
+    if (name === 'roll' && rollError) {
+      setRollError('');
+    }
+    
     // Reset phone error if corrected
     if (name === 'phoneNumber' && phoneError) {
       setPhoneError('');
@@ -37,6 +43,12 @@ function StudentRegister() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate roll number field
+    if (formData.roll.length !== 16) {
+      setRollError('Roll number must be 16 characters.');
+      return;
+    }
 
     // Validate phone number length
     if (formData.phoneNumber.length !== 10) {
@@ -106,6 +118,7 @@ function StudentRegister() {
                   border: '1px solid #ccc',
                 }}
               />
+              {rollError && <p style={{ color: 'red', marginTop: '5px' }}>{rollError}</p>}
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label>Year</label>
