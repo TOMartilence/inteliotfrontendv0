@@ -1,71 +1,152 @@
 .faq-background {
-    padding: 40px 0;
+  background-color: #2A2850;
+  padding: 60px 0;
+  min-height: 100vh;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.faq-title {
+  color: white;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accordion-item {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.accordion-item:hover {
+  transform: translateY(-2px);
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #3A3870;
+  color: white;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.accordion-header:hover {
+  background-color: #4A487F;
+}
+
+.accordion-header:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #6A68AF;
+}
+
+.question-number {
+  margin-right: 12px;
+  font-weight: 600;
+  color: #8A88CF;
+}
+
+.question-text {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.chevron-icon {
+  color: #8A88CF;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  height: 0;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+.answer-text {
+  color: #2A2850;
+  padding: 20px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  padding: 8px;
+  margin: 0 12px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.add-faq-button-container {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.add-faq-button {
+  background-color: #3A3870;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-faq-button:hover {
+  background-color: #4A487F;
+  transform: translateY(-2px);
+}
+
+.add-faq-button:active {
+  transform: translateY(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
   }
-  
-  .faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .accordion {
-    margin-top: 20px;
-  }
-  
-  .accordion-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
+
   .accordion-header {
-    padding: 15px;
-    background-color: #f7f7f7;
-    cursor: pointer;
-    border-radius: 8px 8px 0 0;
-    transition: background-color 0.3s ease;
+    padding: 16px;
   }
-  
-  .accordion-header:hover {
-    background-color: #eaeaea;
+
+  .question-text {
+    font-size: 15px;
   }
-  
-  .accordion-content {
-    padding: 15px;
-    background-color: #fff;
-    border-top: 1px solid #ddd;
-    border-radius: 0 0 8px 8px;
+
+  .answer-text {
+    padding: 16px;
   }
-  
-  .faq-answer {
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .delete-icon {
-    float: right;
-    font-size: 18px;
-  }
-  
-  .add-faq-button-container {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .add-faq-button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-  }
-  
-  .add-faq-button:hover {
-    background-color: #45a049;
-  }
-  
+}
