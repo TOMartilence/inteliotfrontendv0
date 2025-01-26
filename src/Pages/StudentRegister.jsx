@@ -13,13 +13,15 @@ function StudentRegister() {
 
   const [message, setMessage] = useState('');
   const [phoneError, setPhoneError] = useState('');
+  const [isHovered, setIsHovered] = useState(false);
+  const [rollError, setRollError] = useState('');
 
   // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     // Validate phone number field
-    if (name === 'phone') {
+    if (name === 'phoneNumber') {
       if (!/^\d{0,10}$/.test(value)) {
         return; // Prevent invalid input
       }
@@ -27,6 +29,11 @@ function StudentRegister() {
 
     setFormData({ ...formData, [name]: value });
 
+    // Reset roll number error if corrected
+    if (name === 'roll' && rollError) {
+      setRollError('');
+    }
+    
     // Reset phone error if corrected
     if (name === 'phoneNumber' && phoneError) {
       setPhoneError('');
@@ -36,6 +43,12 @@ function StudentRegister() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate roll number field
+    if (formData.roll.length !== 16) {
+      setRollError('Roll number must be 16 characters.');
+      return;
+    }
 
     // Validate phone number length
     if (formData.phoneNumber.length !== 10) {
@@ -57,6 +70,7 @@ function StudentRegister() {
         style={{
           backgroundImage: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)',
           minHeight: '100vh',
+          padding: '120px',
         }}
       >
         <div
@@ -68,7 +82,7 @@ function StudentRegister() {
             borderRadius: '10px',
           }}
         >
-          <h2 style={{ marginTop: '100px' }}>IoRT Registration</h2>
+          <h2 style={{ marginTop: '20px' }}>IoRT Registration</h2>
           {message && <p style={{ color: 'green' }}>{message}</p>}
           <form onSubmit={handleSubmit}>
             <div style={{ marginBottom: '15px' }}>
@@ -104,6 +118,7 @@ function StudentRegister() {
                   border: '1px solid #ccc',
                 }}
               />
+              {rollError && <p style={{ color: 'red', marginTop: '5px' }}>{rollError}</p>}
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label>Year</label>
@@ -207,10 +222,13 @@ function StudentRegister() {
                 padding: '10px 20px',
                 border: 'none',
                 borderRadius: '5px',
-                backgroundColor: 'blue',
+                backgroundColor: isHovered ? '#4d4df7' : 'blue',
                 color: 'white',
                 cursor: 'pointer',
+                marginBottom: '10px',
               }}
+              onMouseOver={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
               Register
             </button>
